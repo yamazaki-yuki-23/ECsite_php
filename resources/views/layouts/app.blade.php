@@ -80,13 +80,22 @@
         background: #C0C0C0; /* 線の色を変えたいときはここを変える */
         margin:0 .4em; /* 文字と線の余白用 なくても良い */
     }
+    #header-color {
+        color:white;
+    } 
+    .navbar-toggler{
+  border-color: #ffffff;
+}
+.navbar-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255,1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
     </style>
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md bg-dark shadow-sm">
             <div class="container">
-                <a class="navbar-brand title" href="{{ url('/') }}">
+                <a class="navbar-brand title" href="{{ url('/') }}" id="header-color">
                     ECsite
                 </a>
                 <form method="GET" action="/">
@@ -108,22 +117,22 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('ログイン') }}</a>
+                                <a class="nav-link" href="{{ route('login') }}" id="header-color">{{ __('ログイン') }}</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('登録') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}" id="header-color">{{ __('登録') }}</a>
                                 </li>
                             @endif
                         @else
                             <li class="nav-item">
-                                <a href="/cartitem" class="nav-link">
+                                <a href="/cartitem" class="nav-link" id="header-color">
                                     カート
                                 </a>
                             </li>
                             <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre style="color:white;">
+                                    <span id="header-color">{{ Auth::user()->name }}</span> <span class="caret" id="header-color"></span>
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -154,6 +163,7 @@
                         <ul>
                     </span>
                 @endif
+                @yield('item-img')
             </div>
             @yield('content')
         </main>

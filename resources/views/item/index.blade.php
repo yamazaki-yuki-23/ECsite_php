@@ -1,11 +1,32 @@
 @extends('layouts.app')
 
+@section('item-img')
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="js/ex01.js"></script>
+@endsection
+
 @section('content')
     @if(Session::has('flash_message'))
         <div class="alert alert-success">
             {{session('flash_message')}}
         </div>
     @endif
+    <div class="container">
+        <div class="card border-primary mb-3">
+            <h3 class="card-header"><strong>今月の一押し商品</h3>
+            <ul class="slide">
+                <li><a href="/item/1"><img src="image/nesure.jpg" class="img"></a></li>
+                <li><a href="/item/7"><img src="image/redblue.jpg" class="img"></a></li>
+                <li><a href="/item/23"><img src="image/irohasu.jpeg" class="img"></a></li>
+                <li><a href="/item/42"><img src="image/allfree.jpg" class="img"></a></li>
+                <li><a href="/item/59"><img src="image/mutou.jpeg" class="img"></a></li>
+                <li><a href="/item/62"><img src="image/akueriasu.jpeg" class="img"></a></li>
+                <li><a href="/item/85"><img src="image/monster.jpg" class="img"></a></li>
+            </ul>
+        </div>
+        <br clear="all">
+    </div>
+
     <div class="container">
         <div class="row justify-content-left">
             @if(count($items) > 0)
