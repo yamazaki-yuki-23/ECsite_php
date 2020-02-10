@@ -13,7 +13,8 @@
     @endif
     <div class="container">
         <div class="card border-primary mb-3">
-            <h3 class="card-header"><strong>今月の一押し商品</h3>
+            <h3 class="card-header"><strong>今月の一押し商品</strong></h3>
+                <div class="item-wrapper">
             <ul class="slide">
                 <li><a href="/item/1"><img src="image/nesure.jpg" class="img"></a></li>
                 <li><a href="/item/7"><img src="image/redblue.jpg" class="img"></a></li>
@@ -23,6 +24,7 @@
                 <li><a href="/item/62"><img src="image/akueriasu.jpeg" class="img"></a></li>
                 <li><a href="/item/85"><img src="image/monster.jpg" class="img"></a></li>
             </ul>
+            </div>
         </div>
         <br clear="all">
     </div>
