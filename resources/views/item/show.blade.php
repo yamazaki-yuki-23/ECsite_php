@@ -25,14 +25,14 @@
                     <div class="card-body">
                         <p class="card-text">
                             <strong><商品価格></strong><br>
-                            ¥{{ number_format($item->amount) }}(税抜価格)
+                            ¥{{ number_format($item->amount) }}(税込価格)
                         </P>
 
                         <p class="card-text">
                             <strong><商品説明></strong><br>
                             {{$item->content}}
                         <p>
-                        
+
                         @if(count($reviews) > 0)
                             <h5 class="card-title">レビュー</h5>
                             @foreach($reviews as $review)

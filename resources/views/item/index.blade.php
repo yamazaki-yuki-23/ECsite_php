@@ -39,7 +39,7 @@
                                 <a href="/item/{{$item->id}}">{{$item->name}}</a>
                             </div>
                             <div class="card-body">
-                                ¥{{ number_format($item->amount) }}
+                                ¥{{ number_format($item->amount) }}(税込価格)
                             </div>
                             @auth
                                 <form method="POST" action="cartitem" class="form-inline m-1">
