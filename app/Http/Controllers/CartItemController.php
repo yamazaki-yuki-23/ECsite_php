@@ -90,7 +90,7 @@ class CartItemController extends Controller
     public function update(Request $request, CartItem $cartItem)
     {
         $validatedData = $request->validate([
-            'quantity' => 'required|integer',
+            'quantity' => 'required|integer|min:1',
         ]);
         $cartItem->quantity = $request->post('quantity');
         $cartItem->save();
