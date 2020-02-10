@@ -18,7 +18,7 @@
                                         <p class="form-control-static">{{old('name')}}</p>
                                         <input id="name" type="hidden" name="name" value="{{old('name')}}">
                                     @else
-                                        <input id="name" type="text" class="form-control" name="name" value="{{$user_info->buyer}}">
+                                        <input id="name" type="text" class="form-control" name="name" value="{{old('name')}}">
                                     @endif
                                 </div>
                             </div>
@@ -30,7 +30,7 @@
                                         <p class="form-control-static">{{old('postalcode')}}</p>
                                         <input id="postalcode" type="hidden" name="postalcode" value="{{old('postalcode')}}">
                                     @else
-                                        <input id="postalcode" type="text" class="form-control" name="postalcode"  value="{{$user_info->postalcode}}" placeholder="ハイフン不要" >
+                                        <input id="postalcode" type="text" class="form-control" name="postalcode"  value="{{old('postalcode')}}" placeholder="ハイフン不要" >
                                     @endif
                                 </div>
                                 <div class="form-group col-md-4">
@@ -46,9 +46,9 @@
                                                 @endforeach
                                             @else
                                                 @foreach(Config::get('region') as $value)
-                                                        <option @if($user_info->region == $value) selected @endif>{{ $value }}</option>
-                                                @endforeach  
-                                            @endif 
+                                                    <option @if(old('region') == $value) selected @endif>{{ $value }}</option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     @endif
                                 </div>
@@ -61,7 +61,7 @@
                                         <p class="form-control-static">{{ old('addressline1') }}</p>
                                         <input id="addressline1" type="hidden" name="addressline1" value="{{ old('addressline1') }}">
                                     @else
-                                        <input id="addressline1" type="text" class="form-control" name="addressline1" value="{{ $user_info->addressline1 }}">
+                                        <input id="addressline1" type="text" class="form-control" name="addressline1" value="{{ old('addressline1') }}">
                                     @endif
                                 </div>
                             </div>
@@ -73,7 +73,7 @@
                                         <p class="form-control-static">{{ old('addressline2') }}</p>
                                         <input id="addressline2" type="hidden" name="addressline2" value="{{ old('addressline2') }}">
                                     @else
-                                        <input id="addressline2" type="text" class="form-control" name="addressline2" value="{{ $user_info->addressline2 }}">
+                                        <input id="addressline2" type="text" class="form-control" name="addressline2" value="{{ old('addressline2') }}">
                                     @endif
                                 </div>
                             </div>
@@ -85,7 +85,7 @@
                                         <p class="form-control-static">{{ old('phonenumber') }}</p>
                                         <input id="phonenumber" type="hidden" name="phonenumber" value="{{ old('phonenumber') }}">
                                     @else
-                                        <input id="phonenumber" type="text" class="form-control" name="phonenumber" value="{{ $user_info->phonenumber }}"　placeholder="ハイフン不要">
+                                        <input id="phonenumber" type="text" class="form-control" name="phonenumber" value="{{ old('phonenumber') }}"　placeholder="ハイフン不要">
                                     @endif
                                 </div>
                             </div>
@@ -94,7 +94,7 @@
                                 <div class="col-md-6">
                                     @if(Request::has('confirm'))
                                         <button type="submit" class="btn btn-primary" name="post">注文を確定する</button>
-                                        <button type="submit" class="btn btn-default" name="back">修正する</button>
+                                        <button type="submit" class="btn btn-secondary" name="back">修正する</button>
                                     @else
                                         <button type="submit" class="btn btn-primary" name="confirm">入力内容を確認する</button>
                                     @endif
