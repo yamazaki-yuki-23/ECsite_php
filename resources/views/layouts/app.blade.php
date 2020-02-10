@@ -82,7 +82,7 @@
     }
     #header-color {
         color:white;
-    } 
+    }
     .navbar-toggler{
   border-color: #ffffff;
 }
